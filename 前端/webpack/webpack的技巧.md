@@ -94,3 +94,94 @@
   比如在开发环境中判断这个标识来增加一些方便于打日志或者测试的模块。在线上环境则就添加一些模块来优化用户的体验。比如加快加载速度。
   
         process.env.NODE_ENV === 'production' ? '[name].[hash].bundle.js' : '[name].bundle.js'
+# code splitting
+ 代码分离，他的作用是把代码分离成不同的包，还可以决定包的加载顺序和优先级，如果用的好，可以大大减少代码加载速度。
+## 实现
+1. 一个是用entry设置不同的入口文件。这种是最方便，最直接的。不过他有个问题就是会把模块里的重复的代码给打包。
+2. 使用CommonsChunkPlugin工具来把不同包中的共用代码打包到指定的入口文件或者是一个新的入口文件。
+
+        new webpack.optimize.CommonsChunkPlugin({
+        +       name: 'common' // Specify the common bundle's name.
+        +     })
+
+3. 使用动态import的方式，这种方式是在代码中使用代码的方式动态import（暂时没看懂）
+
+        button.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
+        +     var print = module.default;
+        +
+        +     print();
+        +   });
+# Caching
+  缓存技术，一般用于web服务器上，因为每次用户的请求都会打到某个站点上，浏览器就会捕获这个站点的一些资源，但是如果
+  每次都抓取一些没有改变的资源，这是没有意义的，所以把一些不变的资源缓存起来，每次只需要把改变的资源从服务器抓取就可以了。
+  
+  所以在webpack打包的时候也是遵循这个原则，不重复打包不改变的资源。
+1. 第一种办法，利用hash来生成打包文件。配置output的filename加上`[ChunkHash]`，这样每次生成就会根据数据块中的内容来生成一个hash值
+    每次改变的时候，这个hash值才会改。
+2. 还有可以通过CommonChunkPlugin把不会容易改变的模块打成一个单独的包。
+3. 在使用CommonChunkPlugin打包的时候可能会出问题，hash值可能会变
+   所以需要另外两个插件来按照不同的方式去生成hash NamedModulesPlugin和 HashedModuleIdsPlugin
+# 做第三方代码库
+  用webpack还可以用作制作第三方的代码库，并可以上传到npm服务器使用。
+  问题就是如果你的模块中引入了第三方模块，如果进行打包会把第三方的包也打包进去这样就会使打包的文件非常大。
+  所以就需要使用webpack中的配置文件中`externals`这个属性来指定一些第三方的环境，可以让消费者自行安装。
+# 使用别名
+  在使用第三库的时候比如Jquery会用一些全局的符号来进行引用比如`$`，webpack可以在配置文件中统一用别名的方式进行配置。
+1. 使用resolve，resolve可以配别名还可以配一些方便代码引入的操作，比如在import的时候不需要添加后缀等等。
+
+            resolve: {
+                alias: {
+                    jquery: "jquery/src/jquery"
+                }
+            }
+
+2. 还可以使用webpack的插件ProvidePlugin
+
+            new webpack.ProvidePlugin({
+              $: 'jquery',
+              jQuery: 'jquery'
+            })
+
+# 使用环境变量
+  可以使用环境变量去在执行的时候传递参数到脚本中，在脚本中可以根据传递过来的参数动态的决定如何进行打包，修改一些配置等等。
+
+        module.exports = {
+          plugins: [
+            new webpack.optimize.UglifyJsPlugin({
+        +      compress: process.env.NODE_ENV === 'production'
+            })
+          ]
+        };
+        
+        {
+          "scripts": {
+            "build": "cross-env NODE_ENV=production PLATFORM=web webpack"
+          }
+        }
+    
+  **必须先安装cross-env这个包**
+
+# 优化事项
+## 使用include决定loader的作用范围
+  使用include可以限定loader转换哪个文件夹下的资源，节约查找时间。
+    
+    {
+      test: /\.js$/,
+      include: path.resolve(__dirname, "src"),
+      loader: "babel-loader"
+    }
+## 尽量少使用loader/plugins
+  尽量减少loader/plugins的使用，因为每次添加这些工具都会消耗一定的启动时间
+## resolve
+  1. 尽量减少resolve.modules, resolve.extensions, resolve.mainFiles, resolve.descriptionFiles的使用，因为他们会调用文件系统比较耗时。
+  2. 如果不使用npm link等把resolve.symlinks: false设置为false
+  3. 如果使用的是自定义的解析器，那把resolve.cacheWithContext设置为false，因为他们不属于上下文
+## dllplugins
+   使用dllplugin移动代码将在单独的编译中有更小的变化，会加快编译速度，不过会增加编译过程中的复杂性。
+## 让编译的文件更小
+   尽量减少引用第三方库，使用CommonChunkPlugin把不同文件的公共部分统一打包。
+## 开发时需注意
+1. 保证最小的chunk数据块，因为webpack只会发送更新的数据块到文件系统，像HMR,[name]/[chunkhash]等都是对改变的数据块生效的。
+
+# publicpath
+ 是标记我们要打包的所有资源在哪个文件夹下
