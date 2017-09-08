@@ -1,6 +1,7 @@
 # 标签的vue指令
 ## v-bind:attribute=xxx
   这个可以把标签的属性值与vue对象中data域下的以xxx为key的值进行绑定。
+  **他可以使用缩写** :attribute
 ## v-if=xxx
   可以用于根据xxx的true和false去决定该标签是否可以显示
 ## v-for="xx in xxx"
@@ -9,6 +10,7 @@
   xxx是代表了vue中定义的列表对象。那么在定义好之后再在标签的内容中添加引用数据即可`{{ xx.text }}`
 ## v-on:click=method
   这个是在相应的标签上绑定相应的事件，事件的相应方法对应的是vue对象中methods下的自定义方法。
+  **他也可以使用缩写** @click
 ## v-model:data
   这个添加到input标签上可以非常容易的实现双向绑定。
 ## v-once

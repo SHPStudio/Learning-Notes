@@ -93,4 +93,77 @@
    显式调用
     
         this.$emit('update:foo', newValue)
-  
+        
+### 使用slot来分发内容
+  可以使用slot来分发内容，也就是说子组件可以定义一个slot区域，来给父组件使用的时候往这里填充东西。
+1. 单个slot
+
+        子组件
+        <div>
+          <h2>我是子组件的标题</h2>
+          <slot>
+            只有在没有要分发的内容时才会显示。
+          </slot>
+        </div>
+        父模板
+        <div>
+          <h1>我是父组件的标题</h1>
+          <my-component>
+            <p>这是一些初始内容</p>
+            <p>这是更多的初始内容</p>
+          </my-component>
+        </div>
+
+2. 具名slot
+   具名slot可以在slot标签上加入`name`属性来指定slot是属于哪个域下的，比如可能是想在header中或者footer中
+   除了添加具名slot外，还可以添加一个默认的slot，添加的内容如果没有指定的slot，默认都会添加到这里。
+3. 作用域插槽
+   是可以往slot里传入属性值，这样在父组件使用的时候，必须使用template指定一下scope一个临时变量，去引用slot标签上的属性。
+   
+        <div class="child">
+          <slot text="hello from child"></slot>
+        </div>
+        
+        <div class="parent">
+          <child>
+            <template scope="props">
+              <span>hello from parent</span>
+              <span>{{ props.text }}</span>
+            </template>
+          </child>
+        </div>
+
+### 动态组件
+   动态组件的作用就是多个模板共用一个挂载点可以动态的切换。使用component标签的is属性去动态的切换。需要把is属性去动态的绑定。
+   
+        <div id="testComponent">
+        	 <component v-bind:is="currentView"></component>
+        </div>
+        
+		    var testComponent = new Vue({
+		    	el: '#testComponent',
+		    	data: {
+		    		currentView: 'find'
+		    	},
+		    	components: {
+		    		home: {
+		    			template: '<p>我是home</p>'
+		    		},
+		    		find: {
+		    			template: '<p>我是find</p>'
+		    		}
+		    	}
+		    })
+   **如果想让切换的模板保留在内存中**那么需要使用keep-alive包裹一下。
+
+### 直接访问子组件
+   使用`ref`给子组件添加一个id
+   
+        <div id="parent">
+          <user-profile ref="profile"></user-profile>
+        </div>
+        var parent = new Vue({ el: '#parent' })
+        // 访问子组件
+        var child = parent.$refs.profile
+   
+   

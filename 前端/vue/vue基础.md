@@ -84,4 +84,23 @@
     {{ ok ? 'YES' : 'NO' }}
     {{ message.split('').reverse().join('') }}
     <div v-bind:id="'list-' + id"></div>
-   
+## 过滤器
+  过滤器是对绑定的参数进行一些过滤，把不符合要求的值都过滤掉。
+### 使用
+  `v-bind:id="value | filter"` 首先就是在标签上写上一个filter，
+  然后在vue实例中实现这个filter
+        
+        new Vue({
+          // ...
+          filters: {
+            capitalize: function (value) {
+              if (!value) return ''
+              value = value.toString()
+              return value.charAt(0).toUpperCase() + value.slice(1)
+            }
+          }
+        })
+  
+  **并且filter是可以串联的**
+  
+  `{{ message | filterA | filterB }}`filterA处理完继续让filterB处理
