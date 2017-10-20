@@ -1,0 +1,6 @@
+# SpringBoot的入口配置
+ 在使用idea配置类似tomcat的springboot启动项的时候，需要注意active profile选项，如果在
+ 测试环境就使用dev，如果线上环境就不用设置。
+
+ 这是因为可能测试环境的spring的application.properties属性配置文件跟线上所配的有所不同，
+ 如果不配置active profile很可能在测试环境链接一些线上配置的线上服务器会出现问题。
