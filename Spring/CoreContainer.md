@@ -80,3 +80,73 @@
     如果classA在构造器依赖classB，classB依赖classA，在Spring配置文件中进行配置的时候，
     在运行时Spring会检测出存在循环依赖问题并抛出`BeanCurrentlyInCreationException`异常。
     解决办法就是替换为setter方式注入。
+
+## idref
+   这个标签可以让spring在发布的时候去验证用这个标签标识的bean是否真的存在，有没有把名字写错
+
+        <bean id="theTargetBean" class="..."/>
+
+        <bean id="theClientBean" class="...">
+            <property name="targetName">
+                <idref bean="theTargetBean"/>
+            </property>
+        </bean>
+
+## ref
+  1. `<ref bean="someBean"/>` 这个ref可以做为property标签或者构造器标签的原子型子标签
+  bean这个属性所指向的bean对象的引用可以是任何容器的，在本容器的也就是本xml文件的，或者是父容器的
+  2. ref 还可以只指向父容器中的bean对象
+
+            <!-- in the parent context -->
+            <bean id="accountService" class="com.foo.SimpleAccountService">
+                <!-- insert dependencies as required as here -->
+            </bean>
+            <!-- in the child (descendant) context -->
+            <bean id="accountService" <!-- bean name is the same as the parent bean -->
+                class="org.springframework.aop.framework.ProxyFactoryBean">
+                <property name="target">
+                    <ref parent="accountService"/> <!-- notice how we refer to the parent bean -->
+                </property>
+                <!-- insert other configuration and dependencies as required here -->
+            </bean>
+
+## collection merge
+  我们可以实现定义一个类似父类模板那种的集合，然后可以在子bean中去继承父bean中的集合，并可以对集合中的数据进行重写或者添加
+
+        <beans>
+            <bean id="parent" abstract="true" class="example.ComplexObject">
+                <property name="adminEmails">
+                    <props>
+                        <prop key="administrator">administrator@example.com</prop>
+                        <prop key="support">support@example.com</prop>
+                    </props>
+                </property>
+            </bean>
+            <bean id="child" parent="parent">
+                <property name="adminEmails">
+                    <!-- the merge is specified on the child collection definition -->
+                    <props merge="true">
+                        <prop key="sales">sales@example.com</prop>
+                        <prop key="support">support@example.co.uk</prop>
+                    </props>
+                </property>
+            </bean>
+        <beans>
+
+  需要注意的是list类型因为是有序的，所以父集合的值在子集合的前面。但是对于property或者set等等的是无序的所以不存在有序这么个语义。
+
+设置为null
+
+        <bean class="ExampleBean">
+            <property name="email">
+                <null/>
+            </property>
+        </bean>
+
+## lazy-initialized
+   因为spring的ApplicationContext创建和配置所有的bean的时候默认bean的生命周期是单例的。
+   这种是立即实例化初始化一次，然后等请求使用的时候去使用早就初始化实例化好的。
+   如果在bean上加上lazy-initialized="true"，代表使用的时候才会去初始化
+
+
+
