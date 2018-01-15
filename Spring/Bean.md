@@ -67,7 +67,43 @@
 3.  自定义的init()
 
 ## 对bean的初始化等等做一些自定义处理使用BeanPostProcessor
-  这个接口中有两个回调函数，我们可以自己去实现这个接口，然后去做一些自定义操作。
+  这个接口中有两个回调函数，我们可以自己去实现这个接口，然后去做一些自定义操作。然后可以通过实现Order接口去设定执行的优先级。
+
+
+
   post-processor会在容器初始化之前调用，并且是在applicationContext的一些初始化的方法之前调用。
+  一些aop的基础操作就是通过这个接口对原有的bean生成一个代理类去做一些切面操作。
+
   addBeanPostProcessor 可以使用这个方法在使用代码形式的配置中使用。
+eg:
+
+        public class InstantiationTracingBeanPostProcessor implements BeanPostProcessor {
+
+            // simply return the instantiated bean as-is
+            public Object postProcessBeforeInitialization(Object bean, String beanName) {
+                return bean; // we could potentially return any object reference here...
+            }
+
+            public Object postProcessAfterInitialization(Object bean, String beanName) {
+                System.out.println("Bean '" + beanName + "' created : " + bean.toString());
+                return bean;
+            }
+        }
+## 使用BeanFactoryPostProcessor自定义元数据
+   我们可以实现这个接口去配置一些自定义的一些元数据，比如动态配置数据库的PropertyPlaceholderConfigurer类就是实现了BeanFactoryPostProcessor接口可以通过一个外部的properties文件去配置的。
+
+   比如使用PropertyPlaceholderConfigurer去配置一些外部的文件来供spring使用占位符的形式去在运行时获取文件中配置的值`${}`，如果对应的key没有在配置文件中那么spring会查找java的`System`系统属性。
+
+   并且可以通过设置systemPropertiesMode这个属性来决定是否检测System属性
+
+   1. never (0):从来不检测System属性
+   2. fallback (1): 在配置文件里找不到的情况下去查System属性
+   3. override (2): 每次都找而且如果key值相同System中的可以覆盖System属性中的
+
+## 使用FactoryBean自定义实例化逻辑
+    如果有复杂的初始化的逻辑，那么可以实现这个接口。
+
+    我们使用ApplicationContext.getBean()的时候就是从FactoryBean中获取的，如果我们想获取FactoryBean
+    那么就用getBean("&beanName")去获取，在beanName前加个&。
+
 
