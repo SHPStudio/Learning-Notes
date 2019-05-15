@@ -9,4 +9,7 @@
 9. java系统属性`System.getProperties()`
 10. 系统环境变量
 11. `rondom.*`属性，来自`RandomValuePropertySource`
-12. 在打包jar包之外的`profile-specific`特定profile的应用配置文件 `application-`
+12. 在打包jar包之外的`profile-specific`特定profile的应用配置文件 `application-{profile}.properties`
+13. jar包内的profile应用配置文件
+14. 打包文件外部的application.properties
+15. jia'bao
