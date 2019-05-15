@@ -1,3 +1,4 @@
+# propertie加载顺序
 1. devtools全局配置 在用户home文件夹下`~/.spring-boot-devtools.properties`
 2. 测试时使用的`@TestPropertySource`注解
 3. 测试时注入的属性 使用`@SpringBootTest`注解时和[test annotations for testing a particular slice of your application.](https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/#boot-features-testing-spring-boot-applications-testing-autoconfigured-tests)
@@ -15,3 +16,6 @@
 15. jar包内的application.properties
 16. 在配置类上的`@PropertySource`注解
 17. 通过`SpringApplication.setDefaultProperties`设置的默认属性
+
+
+
