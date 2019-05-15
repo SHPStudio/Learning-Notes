@@ -22,6 +22,7 @@
 因为使用上述的属性会覆盖掉默认的配置文件查找路径，所以如果想要在之前的基础上增加路径可以使用`spring.config.additional-location`属性
 
 # 加密属性处理
-如果想对加密的属性值解密再放入spring环境中可以用`EnvironmentPostProcessor`接口允许在Spring正式启动前修改属性。
-如果想以更安全的方式存储证书和密码的话，可以参考``
+如果想对加密的属性值解密再放入spring环境中可以用`EnvironmentPostProcessor`接口允许在Spring正式启动前修改属性。参考
+如果想以更安全的方式存储证书和密码的话，可以参考` Spring Cloud Vault `项目，它提供外部的一个安全外部配置的存储。
+
 
