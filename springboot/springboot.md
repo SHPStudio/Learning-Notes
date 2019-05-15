@@ -21,3 +21,5 @@
 可以通过`spring.config.location`属性去配置要加载的配置文件路径，注意他是反序查询的，多个路径都逗号分隔
 因为使用上述的属性会覆盖掉默认的配置文件查找路径，所以如果想要在之前的基础上增加路径可以使用`spring.config.additional-location`属性
 
+# 加密
+
