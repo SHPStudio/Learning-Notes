@@ -14,4 +14,4 @@
 14. 打包文件外部的application.properties
 15. jar包内的application.properties
 16. 在配置类上的`@PropertySource`注解
-17. 通过`SpringApplication.setDefaultP`
+17. 通过`SpringApplication.setDefaultProperties`设置的默认属性
