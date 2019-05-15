@@ -9,3 +9,4 @@
 9. java系统属性`System.getProperties()`
 10. 系统环境变量
 11. `rondom.*`属性，来自`RandomValuePropertySource`
+12. 在打包
