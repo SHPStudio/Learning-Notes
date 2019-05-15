@@ -17,5 +17,6 @@
 16. 在配置类上的`@PropertySource`注解
 17. 通过`SpringApplication.setDefaultProperties`设置的默认属性
 
-
+# 修改配置文件路径
+可以通过`spring.config.location`属性去配置要加载的配置文件路径，注意他是反序查询的，多个路径都逗号分隔
 
