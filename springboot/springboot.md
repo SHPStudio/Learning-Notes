@@ -7,4 +7,5 @@
 7. `ServletContext`初始化参数
 8. 来自`java:comp/env`的JNDI属性
 9. java系统属性`System.getProperties()`
-10. 
+10. 系统环境变量
+11. `rondom.*`属性，来自`RandomValuePropertySource`
