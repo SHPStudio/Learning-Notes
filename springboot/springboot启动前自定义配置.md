@@ -1,4 +1,6 @@
 # EnvironmentPostProcessor
 通过实现这个接口可以修改特定的配置属性或者新加载一个配置文件。
 1. 自定义类实现`EnvironmentPostProcessor`
-2. 通过编码方式或者配置文件方式或者
+2. 通过编码方式或者配置文件方式或者使用spring.factories把自定义的实现类配置到Listeners或者Initializers中
+3. 例如使用spring.factories
+`org.springframework.boot.env.EnvironmentPostProcessor=com.example.YourEnvironmentPostProcessor`
