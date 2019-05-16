@@ -5,7 +5,7 @@
 3. 例如使用spring.factories
 `org.springframework.boot.env.EnvironmentPostProcessor=com.example.YourEnvironmentPostProcessor`
 
-自定义实现:
+自定义实现: 从外部加载yml配置文件
 ```java
 public class EnvironmentPostProcessorExample implements EnvironmentPostProcessor {
 
