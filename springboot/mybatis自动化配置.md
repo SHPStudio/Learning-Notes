@@ -4,6 +4,6 @@
 ### DataSourceInitializerPostProcessor
  注入这个类的目的是在回调`postProcessAfterInitialization`这个方法时直接强制初始化`DataSourceInitializer`
 ### DataSourceInitializer
-它可以读取`spring.datasource.schema`配置，在项目启动时创建表sql文件创建表和触发数据库初始化事件表示初始化表结构完成，这个事件监听也是在该类中，通过initialized初始化配置来决定是否需要
+它可以读取`spring.datasource.schema`配置，在项目启动时创建表sql文件创建表和触发数据库初始化事件表示初始化表结构完成，这个事件监听也是在该类中，通过initialized初始化配置来决定是否需要跑data.sql来创建初始化的数据。
 #### DatabasePopulatorUtils
 使用该类通过`ResourceDatabasePopulator`和`DataSource`创建数据库链接并执行脚本。
