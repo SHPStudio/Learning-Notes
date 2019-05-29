@@ -4,4 +4,4 @@
 ### DataSourceInitializerPostProcessor
  注入这个类的目的是在回调`postProcessAfterInitialization`这个方法时直接强制初始化`DataSourceInitializer`
 ### DataSourceInitializer
-它可以读取`spring.datasource.schema`配置创建表和``
+它可以读取`spring.datasource.schema`配置，和创建表创建表和扫描
