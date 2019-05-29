@@ -6,4 +6,4 @@
 ### DataSourceInitializer
 它可以读取`spring.datasource.schema`配置，在项目启动时创建表sql文件创建表和扫描data.sql等数据sql创建数据。并触发数据库初始化事件。
 #### DatabasePopulatorUtils
-使用该类通过`ResourceDatabasePopulator`和`DataSource`
+使用该类通过`ResourceDatabasePopulator`和`DataSource`创建数据库链接并执行脚本。
