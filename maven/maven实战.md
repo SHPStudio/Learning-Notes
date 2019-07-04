@@ -12,3 +12,6 @@ ${version}: 表示项目版本
 ## POM属性
 ${project.artifactId}: 对应的是<project>下的artifactId<br/>
 ${project.build.sourceDirectory}：项目主源码目录，默认是src/main/java
+...
+
+## settings属性
