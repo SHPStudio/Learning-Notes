@@ -9,4 +9,6 @@
 ## 内置属性
 ${basedir}： 表示项目根目录，即pom.xml所在的目录
 ${version}: 表示项目版本
-## POM
+## POM属性
+${project.artifactId}: 对应的是<project>下的artifactId
+${project.build.sourceDirectory}：项目主源码目录，
