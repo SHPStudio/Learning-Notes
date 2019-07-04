@@ -17,5 +17,9 @@ ${project.build.sourceDirectory}：项目主源码目录，默认是src/main/jav
 
 ## settings属性
 所有以`settings`开头的属性都会引用settings.xml文件中xml元素的值，例如${settings.localRepository}就是指向用户本地仓库的地址的
+
 ## java系统属性
+所有Java系统属性都可以使用maven属性引用，例如${user.home}指向用户目录。可以使用`mvn help:system`命令查看所有的Java系统属性
+
+## 环境变量
 所有
