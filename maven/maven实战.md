@@ -22,4 +22,4 @@ ${project.build.sourceDirectory}：项目主源码目录，默认是src/main/jav
 所有Java系统属性都可以使用maven属性引用，例如${user.home}指向用户目录。可以使用`mvn help:system`命令查看所有的Java系统属性
 
 ## 环境变量
-所有
+所有环境变量都可以使用env.开头的Maven属性引用，例如${env.JAVA_HOME}指向的就是JAVA_HOME环境变量的值。
