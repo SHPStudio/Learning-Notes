@@ -16,4 +16,4 @@
   docker仓库服务是公开的，最常使用的就是docker官方的了，不过官方的是国外的服务器，我们下载拉取会很慢，所以国内会有很多的镜像服务器，来加速我们下载镜像。
 
 ## docker配置
-  docker启动时实际上是调用了dockerd命令，支持多种启动参数，
+  docker启动时实际上是调用了dockerd命令，支持多种启动参数，用户可以直接通过dockerd命令启动docker，另外这些参数可以写在`/etc/docker`路径下的deamon.json文件中，由dockerd服务启动时读取。
