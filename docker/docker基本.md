@@ -22,3 +22,6 @@
    "debug": true
 }
 ```
+
+## docker异常日志
+  docker服务不正常时，可以通过查看Docker服务的日志来
