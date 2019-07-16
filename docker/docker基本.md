@@ -27,4 +27,7 @@
   docker服务不正常时，可以通过查看Docker服务的日志来确定问题，例如RedHat系统上的日志可能为`/var/log/messages`，在系统上可以执行命令`journalctl -u docker.service`来进行查看
 
 ## docker清理镜像
-  时间长了后，可能会存在很多无用的镜像，可通过命令`docker image `
+  时间长了后，可能会存在很多无用的镜像，可通过命令`docker image prune`， 它支持几个参数
+  1. `-a` 删除所有的无用镜像
+  2. `-filter` 清理服务过滤器的镜像
+  3. `f` 强制删除
