@@ -24,4 +24,4 @@
 ```
 
 ## docker异常日志
-  docker服务不正常时，可以通过查看Docker服务的日志来
+  docker服务不正常时，可以通过查看Docker服务的日志来确定问题，例如RedHat系统上的日志可能为`/var/log/messages`，在系统上可以执行命令`journalctl -u docker.service`来进行查看
