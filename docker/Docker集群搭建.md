@@ -6,4 +6,4 @@
   通过命令`timedatectl set-timezone Asia/Shanghai`和`timedatectl set-ntp on`调整时区，让时间同步
 
 ## 构建集群
- 首先在集群中的一个节点构建manager节点。使用`docker swarm init --advertise-addr <ip>`来创建，创建成功会提示通过一段带有token的命令来使**工作节点***加入
+ 首先在集群中的一个节点构建manager节点。使用`docker swarm init --advertise-addr <ip>`来创建，创建成功会提示通过一段带有token的命令来使**工作节点**加入集群。
