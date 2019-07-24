@@ -6,4 +6,4 @@
   通过命令`timedatectl set-timezone Asia/Shanghai`和`timedatectl set-ntp on`调整时区，让时间同步
 
 ## 构建集群
- 首先在集群中的一个节点构建manager节点。使用``
+ 首先在集群中的一个节点构建manager节点。使用`docker swar`
