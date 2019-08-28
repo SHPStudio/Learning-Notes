@@ -20,7 +20,8 @@
 * [Spring使用注意事项](./Spring/Spring注意事项.md)
 * [Spring验证Validation](./Spring/Spring验证.md)
 ### SpringBoot
-### 分布式
+### 开发知识
+* [香瓜技术名词]
 
 ## 服务器
 ### Linux
