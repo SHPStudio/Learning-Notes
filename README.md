@@ -38,7 +38,9 @@
 * [存储结构与磁盘知识](./Linux/存储结构与磁盘划分.md)
 * [文件共享](./Linux/文件共享.md)
 * [用户身份与权限](./Linux/用户身份与权限.md)
-* [管道符、重定向与
+* [管道符、重定向与环境变量](./Linux/管道符、重定向与环境变量.md)
+* [定时任务](./Linux/计划任务服务程序.md)
+
 ### docker
 * [docker基础](./docker/docker基本.md)
 * [docker安装](./docker/docker安装.md)
