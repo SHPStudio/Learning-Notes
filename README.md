@@ -27,5 +27,5 @@
 * [Spring的Bean](./Spring/Bean.md)
 * [Spring依赖注入容器](./Spring/CoreContainer.md)
 * [Spring4新特性](./Spring/Spring4的新特性.md)
-* [Spring使用注意事项](./Spring
-
+* [Spring使用注意事项](./Spring/Spring注意事项.md)
+* [Spring验证Validation](./Spring/Spring验证.md)
