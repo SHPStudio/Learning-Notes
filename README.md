@@ -39,7 +39,8 @@
 * [docker数据管理](./docker/数据管理.md)
 * [docker网络](./docker/网络.md)
 * [docker获取镜像](./docker/获取镜像.md)
-* [docker镜像
+* [docker镜像知识与构建镜像](./docker/镜像高级.md)
+* [docker集群搭建](./docker/Docker集群搭建.md)
 
 
 ## 前端开发
