@@ -21,7 +21,8 @@
 * [Spring验证Validation](./Spring/Spring验证.md)
 ### SpringBoot
 ### 开发知识
-* [相关技术名词](./
+* [相关技术名词](./开发知识/技术名词.md)
+* [开发技术整理]
 
 ## 服务器
 ### Linux
