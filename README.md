@@ -33,13 +33,16 @@
 * [Centos7虚拟机配置网络](./Linux/Centos7虚拟机配置网络.md)
 
 ## 前端开发
+### ES6
 ### ReactNative
 * [RN基础知识点整理](./reactnative/基础.md)
 
 ## 开发工具
 ### IntelliJ IDEA
 * [软件相关配置](./开发工具/idea/idea.md)
-* [
+* [软件使用技巧](./开发工具/idea/idea使用技巧.md)
+
+
 
 
 
