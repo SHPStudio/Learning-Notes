@@ -44,6 +44,7 @@
 * [Vue组件知识](./前端/vue/vue组件.md)
 * [Vue常用指令属性](./前端/vue/vue指令.md)
 * [Vue动画](./前端/vue/vue过度动画.md)
+* [Vue高级特性](./前端/vue/复合和可用性.md)
 * [
 ### ReactNative
 * [RN基础知识点整理](./reactnative/基础.md)
