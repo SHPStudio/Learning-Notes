@@ -37,7 +37,8 @@
 * [代理缓存知识](./Linux/代理缓存.md)
 * [存储结构与磁盘知识](./Linux/存储结构与磁盘划分.md)
 * [文件共享](./Linux/文件共享.md)
-* [
+* [用户身份与权限](./Linux/用户身份与权限.md)
+* [管道符、重定向与
 ### docker
 * [docker基础](./docker/docker基本.md)
 * [docker安装](./docker/docker安装.md)
