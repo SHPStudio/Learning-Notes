@@ -36,6 +36,8 @@
 * [ftp服务vsftpd](./Linux/vsftpd.md)
 * [代理缓存知识](./Linux/代理缓存.md)
 * [存储结构与磁盘知识](./Linux/存储结构与磁盘划分.md)
+* [文件共享](./Linux/文件共享.md)
+* [
 ### docker
 * [docker基础](./docker/docker基本.md)
 * [docker安装](./docker/docker安装.md)
