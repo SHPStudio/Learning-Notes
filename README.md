@@ -33,7 +33,8 @@
 * [Centos7虚拟机配置网络](./Linux/Centos7虚拟机配置网络.md)
 * [SSH](./Linux/ssh.md)
 * [Vim与Shell](./Linux/Vim与Shell.md)
-* [
+* [ftp服务vsftpd](./Linux/vsftpd.md)
+* [代理缓存知识](./Linux/代理
 ### docker
 * [docker基础](./docker/docker基本.md)
 * [docker安装](./docker/docker安装.md)
