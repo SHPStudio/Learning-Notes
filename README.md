@@ -16,7 +16,7 @@
 * [netty基础概念](./netty/netty.md)
 
 ## ReactNative
-* [RN基础知识点整理](./netty/netty.md)
+* [RN基础知识点整理](./reactnative/基础.md)
 
 ## Redis
 * [Redis基础知识](./Redis/基础.md)
