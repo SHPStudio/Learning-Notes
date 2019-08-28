@@ -38,6 +38,8 @@
 
 ## 开发工具
 ### IntelliJ IDEA
+* [软件相关配置](./开发工具/idea/idea.md)
+* [
 
 
 
