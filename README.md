@@ -25,5 +25,7 @@
 ## Spring
 * [Spring基础知识](./Spring/Spring.md)
 * [Spring的Bean](./Spring/Bean.md)
-* [Spring依赖注入容器](./Spring/CoreContainer
+* [Spring依赖注入容器](./Spring/CoreContainer.md)
+* [Spring4新特性](./Spring/Spring4的新特性.md)
+* [Spring使用注意事项](./Spring
 
