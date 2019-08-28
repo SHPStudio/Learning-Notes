@@ -46,7 +46,7 @@
 * [Vue动画](./前端/vue/vue过度动画.md)
 * [Vue高级特性](./前端/vue/复合和可用性.md)
 * [Vue路由](./前端/vue/Vue-Route.md)
-* [Vue生产部署](./
+* [Vue生产部署](./前端/vue/生产化部署.md)
 ### ReactNative
 * [RN基础知识点整理](./reactnative/基础.md)
 
