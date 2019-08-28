@@ -1,8 +1,10 @@
+[TOC]
 # LearnText
 学习笔记
 
 ## 目录
-[TOC]
+
+
 
 ## 后端开发
 ### Java
