@@ -42,7 +42,7 @@
 * [Vue基础](./前端/vue/vue基础.md)
 * [Vue常用技术点](./前端/vue/vue技术点.md)
 * [Vue组件知识](./前端/vue/vue组件.md)
-* [Vue常用指令属性](./前端/vue/vue指令.)
+* [Vue常用指令属性](./前端/vue/vue指令.md)
 ### ReactNative
 * [RN基础知识点整理](./reactnative/基础.md)
 
