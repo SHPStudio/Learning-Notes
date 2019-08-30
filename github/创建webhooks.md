@@ -8,4 +8,5 @@
 1. 去你的代码仓库或者组织的设置页面(settings),然后点击`WebHooks`->`Add webhook`
 2. 使用github提供的[Webhooks API](https://developer.github.com/v3/repos/hooks/)来构建和管理webhook
 
-webhook
+webhook在使用前需要一些配置:
+### PaylogURL
