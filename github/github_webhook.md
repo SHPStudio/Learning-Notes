@@ -21,5 +21,5 @@
 - `sender` 触发了事件的用户
 - 事件在哪里发生的 可能是组织(organization)或者仓库(repository)
 - `installation` 如果一个webhook的数据是准备给GITHUB APP的，那么还会包含一个instllation事件的数据。
-**注意** 传输的数据最大为25mb
+**注意** 传输的数据最大为25mb，如果事件生成的数据太大将不会触发webhook。
 
