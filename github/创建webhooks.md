@@ -17,5 +17,7 @@ PayloadURL是接收webhook Post请求的服务器地址。
 
 ### Content Type
 webhook数据传输格式支持两种
-- application/json 响应体是json格式 
-- application/x-www-form-urlencoded 数据本来
+- application/json 响应体直接为json格式 
+- application/x-www-form-urlencoded 数据本身是json字符串，不过是作为表单的`payload`字段传输
+
+### secret
