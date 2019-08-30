@@ -28,5 +28,40 @@
 - `X-GitHub-Event` 触发事件的类型
 - `X-Github-Delivery` 传输的标识GUID
 - `X-Hub-Signature` 响应体HMAC16进制摘要。这个特殊的header在有密钥(secret)配置下才会发送，生成方式是使用`sha1`加密hash算法以`secret`密钥作为HMAC计算得出。
-- `User-Agent` 带有GitHub-Hookshot/`
+- `User-Agent`将会带有`GitHub-Hookshot/`前缀
+
+数据示例：
+```
+POST /payload HTTP/1.1
+Host: localhost:4567
+X-GitHub-Delivery: 72d3162e-cc78-11e3-81ab-4c9367dc0958
+X-Hub-Signature: sha1=7d38cdd689735b008b3c702edd92eea23791c5f6
+User-Agent: GitHub-Hookshot/044aadd
+Content-Type: application/json
+Content-Length: 6615
+X-GitHub-Event: issues
+{
+  "action": "opened",
+  "issue": {
+    "url": "https://api.github.com/repos/octocat/Hello-World/issues/1347",
+    "number": 1347,
+    ...
+  },
+  "repository" : {
+    "id": 1296269,
+    "full_name": "octocat/Hello-World",
+    "owner": {
+      "login": "octocat",
+      "id": 1,
+      ...
+    },
+    ...
+  },
+  "sender": {
+    "login": "octocat",
+    "id": 1,
+    ...
+  }
+}
+```
 
