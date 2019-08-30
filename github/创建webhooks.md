@@ -9,4 +9,5 @@
 2. 使用github提供的[Webhooks API](https://developer.github.com/v3/repos/hooks/)来构建和管理webhook
 
 webhook在使用前需要一些配置:
-### PaylogURL
+### PayloadURL
+PayloadURL是接收webhook Post请求的
