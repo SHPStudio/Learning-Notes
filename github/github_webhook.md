@@ -25,5 +25,5 @@
 
 ## 传输数据header
 在触发事件github向配置的url发送post请求传输数据时会有一些特殊的`headers`
-- 
+- `X-GitHub-Event` 
 
