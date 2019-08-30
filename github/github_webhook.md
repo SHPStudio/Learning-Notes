@@ -1,3 +1,5 @@
 # WebHook
 ## 简介
- 它是一种事件的机制，可以订阅在Github.com上的事件，当这些事件被触发后，例如git push事件，github会发送http post请求到webHook配置的url上。所以可以用来做很多事情，例如更新外部issue跟踪器，触发CI构建、更新备份镜像，甚至可以部署到生产服务器上，没有做不到，
+ 它是一种事件的机制，可以订阅在Github.com上的事件，当这些事件被触发后，例如git push事件，github会发送http post请求到webHook配置的url上。所以可以用来做很多事情，例如更新外部issue跟踪器，触发CI构建、更新备份镜像，甚至可以部署到生产服务器上，没有做不到，只有你想不到。
+ webhook可以设置在
+ **注意** 每个事件
