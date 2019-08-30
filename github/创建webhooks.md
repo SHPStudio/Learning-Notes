@@ -10,4 +10,4 @@
 
 webhook在使用前需要一些配置:
 ### PayloadURL
-PayloadURL是接收webhook Post请求的
+PayloadURL是接收webhook Post请求的服务器地址。
