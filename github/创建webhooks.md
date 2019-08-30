@@ -9,7 +9,12 @@
 2. 使用github提供的[Webhooks API](https://developer.github.com/v3/repos/hooks/)来构建和管理webhook
 
 webhook在使用前需要一些配置:
+
 ### PayloadURL
 PayloadURL是接收webhook Post请求的服务器地址。
 
 由于我们可能没有一个专门的服务器用来测试是否设置成功，不过github给了一个用来测试的url`http://localhost:4567/payload`,详情请看[Configuring Your Server](https://developer.github.com/webhooks/configuring/)
+
+### Content Type
+webhook数据传输格式支持两种
+- json
