@@ -12,4 +12,4 @@
 - `create` 当创建一个分支(branch)或者标签(tag)时触发
 - `delete` 当删除一个分支或标签时触发
 - `fork` 当有人fork时触发
-- 
+- `issues` 当有issue操作时触发，例如开启，
