@@ -24,5 +24,8 @@ webhook数据传输格式支持两种
 设置webhook的secret能够让你确保这个POST的请求是从github发出的。具体详情[Securing your webhooks](https://developer.github.com/webhooks/securing/)
 
 ### SSL Verification
-如果你的`PayloadURL`是一个https的加密网站，你需要设置SSL验证相关的信息。
+如果你的`PayloadURL`是一个https的加密网站，你需要设置SSL验证相关的信息。一般只要显示就设置启用就好，会保证发送数据时发送到URL的加密端口(443);
+
+### Active
+
 
