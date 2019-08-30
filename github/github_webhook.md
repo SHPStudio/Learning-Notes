@@ -24,5 +24,6 @@
 **注意** 传输的数据最大为25mb，如果事件生成的数据太大将不会触发webhook。例如当很多分支同时push时触发create事件产生的数据将大于25mb。
 
 ## 传输数据header
-在触发事件github向配置的url发送post请求传输数据时会有一些
+在触发事件github向配置的url发送post请求传输数据时会有一些特殊的`headers`
+- 
 
