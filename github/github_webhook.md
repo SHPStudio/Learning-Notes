@@ -20,4 +20,5 @@
 每个事件都有特定的数据格式来标识该事件的相应信息。事件数据大体包括几项数据:
 - `sender` 触发了事件的用户
 - 事件在哪里发生的 可能是组织(organization)或者仓库(repository)
+- `installation` 如果一个webhook的数据是准备给GITHUB APP的，那么还会包含
 
