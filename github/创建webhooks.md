@@ -23,5 +23,6 @@ webhook数据传输格式支持两种
 ### secret
 设置webhook的secret能够让你确保这个POST的请求是从github发出的。具体详情[Securing your webhooks](https://developer.github.com/webhooks/securing/)
 
-### SSL Veri
+### SSL Verification
+
 
