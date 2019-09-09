@@ -98,4 +98,27 @@ func (t Time) Add(d Duration) Time {
 
 #### 指针传递
 大多数情况，结构类型的本质并不是不可变的，这种情况下，对这个类型做增加和修改删除登操作应该改这个值的本身，而不是副本。这个时候就需要传递指针来共享这个值。
+```
+// File 表示一个打开的文件描述符
+type File struct {
+    *file
+}
+
+// file 是*File 的实际表示
+// 额外的一层结构保证没有哪个os 的客户端
+// 能够覆盖这些数据。如果覆盖这些数据，
+// 可能在变量终结时关闭错误的文件描述符
+type file struct {
+    fd int
+    name string
+    dirinfo *dirInfo // 除了目录结构，此字段为nil
+    nepipe int32     // Write 操作时遇到连续EPIPE 的次数
+}
+```
+
+```
+func Open(name string) (file *File, err error) {
+    return OpenFile(name, O_RDONLY, 0)
+}
+```
 
