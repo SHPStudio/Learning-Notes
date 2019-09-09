@@ -1,7 +1,7 @@
 # Go语言基础
 ## 变量声明
 `var [名称] [类型]`
-eg: `var a, b *int`
+eg: `var a, b *int` 表示a,b为int的指针类型
 
 go语言的基本类型：
 - bool
@@ -12,4 +12,6 @@ go语言的基本类型：
 - rune // int32的别名代表一个Unicode码
 - float32 float64
 - complex64 complex128
+
+变量声明后
 
