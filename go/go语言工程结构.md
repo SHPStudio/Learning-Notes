@@ -47,4 +47,12 @@ package是关键字。Go规定包声明中的包名是代码包路径的最后�
 
 ### 包导入
 `import "gopcp.v2/helper/log/base"`
-引入包的路径是在工作区的src目录下的相对路径
+引入包的路径是在工作区的src目录下的相对路径。
+引入多个包
+```
+import (
+  "xxxx"
+  "xxxx"
+)
+```
+如果
