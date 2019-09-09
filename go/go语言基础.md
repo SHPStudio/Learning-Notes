@@ -13,5 +13,7 @@ go语言的基本类型：
 - float32 float64
 - complex64 complex128
 
-变量声明后
+变量声明后，系统自动赋予该类型的零值，int为0，float为0.0 bool为false string为空字符串 指针为nil。
+
+变量命名遵循
 
