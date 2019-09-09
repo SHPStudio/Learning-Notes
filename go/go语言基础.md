@@ -8,5 +8,8 @@ go语言的基本类型：
 - string
 - int int8 int16 int32 int64
 - uint uint8 uint16 uint32 uint64 uintptr
-- byte
+- byte // uint8的别名 
+- rune // int32的别名代表一个Unicode码
+- float32 float64
+- complex64 complex128
 
