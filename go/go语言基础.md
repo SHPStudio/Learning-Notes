@@ -77,7 +77,19 @@ func Now() Time {
 ```
 Now方法的实现就没有通过使用指针让Time值共享，而是返回了Time值的副本。
 ```
-
+func (t Time) Add(d Duration) Time {
+    t.sec += int64(d / 1e9)
+    nsec := int32(t.nsec) + int32(d%1e9)
+    if nsec >= 1e9 {
+        t.sec++
+        nsec -= 1e9
+    } else if nsec < 0 {
+        t.sec--
+        nsec += 1e9
+    }
+    t.nsec = nsec
+    return t
+}
 ```
 
 如果本身带有可变的属性，例如本身结构带有指针类型。
