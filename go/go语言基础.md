@@ -68,6 +68,16 @@ type Time struct {
     loc *Location
 }
 ```
-该时间结构体本身就属于不可更改的对象。所以可以当作
+该时间结构体本身就属于不可更改的对象。所以可以当作原始类型来对待。
+```
+func Now() Time {
+    sec, nsec := now()
+    return Time{sec + unixToInternal, nsec, Local}
+}
+```
+Now方法的实现就没有通过使用指针让Time值共享，而是返回了Time值的副本。
+```
+
+```
 
 如果本身带有可变的属性，例如本身结构带有指针类型。
