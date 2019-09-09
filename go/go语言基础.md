@@ -18,5 +18,18 @@ go语言的基本类型：
 变量命名遵循驼峰命名
 
 变量声明的几种方式：
-- var [名字] []
+- var [名字] [类型]
+- 批量
+```
+var (
+  a int
+  b string
+  c []float32
+  d func() bool
+  e struct {
+     x int
+  }
+)
+```
+
 
