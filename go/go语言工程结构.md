@@ -33,4 +33,5 @@
 ### 测试源码文件
 它是一种特殊的库文件，可通过go test命令运行当前代码包下所有的测试源码文件。成为测试源码文件的条件有两个
 - 文件名以`_test.go`结尾
-- 文件中至少包含一个名称以Test开头或Benchmark
+- 文件中至少包含一个名称以Test开头或Benchmark开头，并且拥有一个类型位*.testing.T或*testing.B的参数的函数。
+testing.T和testing.B是两个结构体类型。而带*
