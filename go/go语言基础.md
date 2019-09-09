@@ -91,5 +91,6 @@ func (t Time) Add(d Duration) Time {
     return t
 }
 ```
+上面代码的Add方法
 
 如果本身带有可变的属性，例如本身结构带有指针类型。
