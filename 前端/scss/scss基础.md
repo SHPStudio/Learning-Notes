@@ -35,3 +35,6 @@ a {
   font-size: 30em;
   font-weight: bold; }
 ```
+
+# $变量
+sass支持用脚本
