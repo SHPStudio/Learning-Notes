@@ -68,4 +68,11 @@ scss中字符串有两种一种带引号的，另外一种不带引号，但是�
 ```
 
 ## 透明通道处理函数
-`opacify`是减少透明度，``
+`opacify`是减少透明度，`transparentize`是增加透明度
+```
+$translucent-red: rgba(255, 0, 0, 0.5);
+p {
+  color: opacify($translucent-red, 0.3);
+  background-color: transparentize($translucent-red, 0.25);
+}
+```
