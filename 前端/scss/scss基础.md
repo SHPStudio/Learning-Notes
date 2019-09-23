@@ -17,3 +17,21 @@ a {
   body.firefox a {
     font-weight: normal; }
 ```
+
+## 命名空间
+```
+.funky {
+  font: {
+    family: fantasy;
+    size: 30em;
+    weight: bold;
+  }
+}
+```
+编译为
+```
+.funky {
+  font-family: fantasy;
+  font-size: 30em;
+  font-weight: bold; }
+```
