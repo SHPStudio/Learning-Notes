@@ -44,4 +44,14 @@ sass支持用脚本的方式来开发样式，可以声明一个变量`$width: 5
   width: $width;
 }
 ```
-局部变量就是在样式内部声明的变量，如果想把局部变量转换为全局
+局部变量就是在样式内部声明的变量，如果想把局部变量转换为全局变量可以添加`!global`来声明。
+```
+#main {
+  $width: 5em !global;
+  width: $width;
+}
+
+#sidebar {
+  width: $width;
+}
+```
