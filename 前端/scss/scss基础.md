@@ -66,3 +66,6 @@ scss中字符串有两种一种带引号的，另外一种不带引号，但是�
 }
 @include firefox-message(".header");
 ```
+
+## 透明通道处理函数
+`opacify`是减少透明度，``
