@@ -14,3 +14,20 @@
   具体的格式是`<仓库名>:<标签>` 例如ubuntu:16.00 标签其实就是版本
   
   docker仓库服务是公开的，最常使用的就是docker官方的了，不过官方的是国外的服务器，我们下载拉取会很慢，所以国内会有很多的镜像服务器，来加速我们下载镜像。
+
+## docker配置
+  docker启动时实际上是调用了dockerd命令，支持多种启动参数，用户可以直接通过dockerd命令启动docker，另外这些参数可以写在`/etc/docker`路径下的deamon.json文件中，由dockerd服务启动时读取。
+```
+{
+   "debug": true
+}
+```
+
+## docker异常日志
+  docker服务不正常时，可以通过查看Docker服务的日志来确定问题，例如RedHat系统上的日志可能为`/var/log/messages`，在系统上可以执行命令`journalctl -u docker.service`来进行查看
+
+## docker清理镜像
+  时间长了后，可能会存在很多无用的镜像，可通过命令`docker image prune`， 它支持几个参数
+  1. `-a` 删除所有的无用镜像
+  2. `-filter` 清理服务过滤器的镜像
+  3. `f` 强制删除
